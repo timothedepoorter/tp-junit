@@ -8,7 +8,7 @@ public class Exo2 {
      * @param number float
      * @throws IllegalArgumentException exception
      */
-    private static void verifyIfNumberIsPositive(float number) throws IllegalArgumentException {
+    private void verifyIfNumberIsPositive(float number) throws IllegalArgumentException {
         if (number <= 0) {
             throw new IllegalArgumentException("Le nombre doit être positif");
         }
@@ -19,7 +19,7 @@ public class Exo2 {
      * @param number float
      * @return float - le prix TTC d'un paramètre number
      */
-    public static float calculateTtcPrice(float number) {
+    public float calculateTtcPrice(float number) {
         verifyIfNumberIsPositive(number);
 
         return number*(1+(TVA/100));
