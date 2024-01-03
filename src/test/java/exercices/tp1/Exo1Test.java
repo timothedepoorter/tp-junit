@@ -27,7 +27,9 @@ class Exo1Test {
     private static Stream<Arguments> argumentsCalculateAverageOfNumbers() {
         return Stream.of(
                 Arguments.of((Object) new int[]{5, 10, 15}, 10),
-                Arguments.of((Object) new int[]{8, 20, 15}, 14)
+                Arguments.of((Object) new int[]{8, 20, 15}, 14),
+                Arguments.of((Object) new int[]{25, 17, 3}, 0),
+                Arguments.of((Object) new int[]{-4, 15, 12}, 0)
         );
     }
 }
