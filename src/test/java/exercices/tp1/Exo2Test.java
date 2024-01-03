@@ -7,6 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class Exo2Test {
     Exo2 exo2;
@@ -27,5 +28,12 @@ class Exo2Test {
     @DisplayName("Calcule prix TTC")
     public void testCalculateTtcPrice(float price) {
         assertEquals(120, Math.round(exo2.calculateTtcPrice(price)));
+    }
+
+    @ParameterizedTest(name = "Test {index} : {0}")
+    @ValueSource(floats = {-150})
+    @DisplayName("Calcule prix TTC avec prix négatif")
+    public void testCalculateTtcPriceWithNegativePrice(float negativePrice) {
+        assertThrows(IllegalArgumentException.class, () -> exo2.calculateTtcPrice(negativePrice));
     }
 }
