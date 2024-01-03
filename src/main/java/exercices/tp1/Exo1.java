@@ -5,7 +5,7 @@ public class Exo1 {
      * @param numbers int[]
      * @return boolean - true si les nombres sont entre 0 et 20, false sinon
      */
-    public static boolean verifyIfNumbersBetween0and20(int[] numbers) {
+    private boolean verifyIfNumbersBetween0and20(int[] numbers) {
         for (int number : numbers) {
             if (number < 0 || number > 20) {
                 return false;
@@ -18,7 +18,7 @@ public class Exo1 {
      * @param numbers int[]
      * @return int - la moyenne des valeurs du tableau d'entier passé en paramètre
      */
-    public static int calculateAverageOfNumbers(int[] numbers) {
+    public int calculateAverageOfNumbers(int[] numbers) {
         if (!verifyIfNumbersBetween0and20(numbers)) {
             return 0;
         }
