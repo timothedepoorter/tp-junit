@@ -25,22 +25,22 @@ public abstract class Salarie {
         this.identite = identite;
     }
 
-    protected void demenager(Adresse newAdresse) {
+    public void demenager(Adresse newAdresse) {
         this.identite.setAdresse(newAdresse);
     }
 
-    protected void travailler(int heures) {
+    public void travailler(int heures) {
         String phraseNom = "Le salarié " + this.identite.getPrenom() + " " + this.identite.getNom() + " ";
         String phraseHeuresTravail = heures + "heures ";
         String phraseSalaire = "et a perçu " + this.salaire.payer(heures) + " euros.";
         System.out.println(phraseNom + phraseHeuresTravail + phraseSalaire);
     }
 
-    protected void travailler() {
+    public void travailler() {
         this.travailler(151);
     }
 
-    protected void augmenter(double pourcentage) {
+    public void augmenter(double pourcentage) {
         this.salaire.setTauxHoraire(this.salaire.getTauxHoraire() * (1 + (pourcentage/100.0)));
     }
 }
