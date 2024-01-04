@@ -31,7 +31,7 @@ public abstract class Salarie {
 
     public void travailler(int heures) {
         String phraseNom = "Le salarié " + this.identite.getPrenom() + " " + this.identite.getNom() + " ";
-        String phraseHeuresTravail = heures + "heures ";
+        String phraseHeuresTravail = heures + " heures ";
         String phraseSalaire = "et a perçu " + this.salaire.payer(heures) + " euros.";
         System.out.println(phraseNom + phraseHeuresTravail + phraseSalaire);
     }
