@@ -2,6 +2,9 @@ package exercices.tp3;
 
 public class Thermometre {
     public int donneTemperature(int[] temperatures) {
+        if (temperatures.length > 10000) {
+            throw new IllegalArgumentException();
+        }
         if (temperatures.length == 0) {
             return 0;
         }
