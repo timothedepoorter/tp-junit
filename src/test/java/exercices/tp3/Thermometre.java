@@ -10,6 +10,11 @@ public class Thermometre {
             if (Math.abs(temperature) < Math.abs(plusProcheDeZero)) {
                 plusProcheDeZero = temperature;
             }
+            if (plusProcheDeZero < 0) {
+                if (Math.abs(plusProcheDeZero) == Math.abs(temperature)) {
+                    plusProcheDeZero = temperature;
+                }
+            }
         }
         return plusProcheDeZero;
     }
