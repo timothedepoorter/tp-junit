@@ -26,4 +26,11 @@ public class ThermometreTest {
         int[] temperatures = {-2, -8, 4, 5};
         assertEquals(-2, thermometre.donneTemperature(temperatures));
     }
+
+    @Test
+    public void should_return_2_when_array_contain_neg2_and_2() {
+        Thermometre thermometre = new Thermometre();
+        int[] temperatures = {-2, -8, -4, 2};
+        assertEquals(2, thermometre.donneTemperature(temperatures));
+    }
 }
