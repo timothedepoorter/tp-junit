@@ -3,6 +3,7 @@ package exercices.tp3;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ThermometreTest {
 
@@ -32,5 +33,12 @@ public class ThermometreTest {
         Thermometre thermometre = new Thermometre();
         int[] temperatures = {-2, -8, -4, 2};
         assertEquals(2, thermometre.donneTemperature(temperatures));
+    }
+
+    @Test
+    public void should_throw_exception_when_array_length_superior_10000() {
+        Thermometre thermometre = new Thermometre();
+        int[] temperatures = new int[10001];
+        assertThrows(IllegalArgumentException.class, () -> thermometre.donneTemperature(temperatures));
     }
 }
